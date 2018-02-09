@@ -1,5 +1,6 @@
 {
   "name": "ui-timeline",
+  "version": "1.0.0",
   "description": "Chronological list of items through timeline.",
   "authors": [
     "JB Llanda <jb@jbllanda.com>"
@@ -19,5 +20,6 @@
   },
   "resolutions": {
     "polymer": "^2.0.0"
-  }
+  },
+  "private": true
 }
