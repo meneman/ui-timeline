@@ -1,5 +1,5 @@
 # ui-timeline
-[![Published on webcomponents.org](https://img.shields.io/badge/webcomponents.org-published-blue.svg)](https://www.webcomponents.org/element/owner/my-element)
+[![Published on webcomponents.org](https://img.shields.io/badge/webcomponents.org-published-blue.svg)](https://www.webcomponents.org/element/Componetized/ui-timeline)
 
   ui-timeline is a way to display your items similar to bullet items, the
   difference is that items are listed at the center with a left and right content.

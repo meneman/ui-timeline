@@ -1,10 +1,17 @@
 {
   "name": "ui-timeline",
   "description": "Chronological list of items through timeline.",
+  "authors": [
+    "JB Llanda <jb@jbllanda.com>"
+  ],
   "main": "ui-timeline.html",
   "dependencies": {
     "polymer": "Polymer/polymer#^2.0.0"
   },
+  "keywords": [
+    "transaction",
+    "history"
+  ],
   "devDependencies": {
     "iron-demo-helpers": "PolymerElements/iron-demo-helpers#^2.0.0",
     "web-component-tester": "Polymer/web-component-tester#^6.0.0",
