@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
+
+    <title>ui-timeline demo</title>
+
+    <script src="../bower_components/webcomponentsjs/webcomponents-lite.js"></script>
+
+    <link rel="import" href="../bower_components/iron-demo-helpers/demo-pages-shared-styles.html">
+    <link rel="import" href="../bower_components/iron-demo-helpers/demo-snippet.html">
+    <link rel="import" href="../ui-timeline.html">
+
+    <custom-style>
+      <style is="custom-style" include="demo-pages-shared-styles">
+      </style>
+    </custom-style>
+  </head>
+  <body>
+    <div class="vertical-section-container centered">
+      <h3>Basic ui-timeline demo</h3>
+      <demo-snippet>
+        <template>
+          <ui-timeline
+            items='[{
+              "left":
+                { "type": "header", "content": "Label 1" },
+              "center":
+                { "dotColor": "dark" },
+              "right":
+                { "type": "text", "content": "I am a sample content 1." }
+              },
+              {
+              "left":
+                { "type": "text", "content": "I am a sample content 2." },
+              "center":
+                { "dotColor": "light" },
+              "right":
+                { "type": "header", "content": "Label 2" }
+              },
+              {
+              "left":
+                { "type": "header", "content": "Label 3" },
+              "center":
+                { "dotColor": "dark" },
+              "right":
+                { "type": "text", "content": "I am a sample content 3." }
+              },
+              {
+              "left":
+                { "type": "text", "content": "I am a sample content 4." },
+              "center":
+                { "dotColor": "light" },
+              "right":
+                { "type": "header", "content": "Label 4" }
+              }]'
+              label="ui-timeline"></ui-timeline>
+        </template>
+      </demo-snippet>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,152 @@
+<link rel="import" href="../polymer/polymer-element.html">
+
+<dom-module id="ui-timeline">
+  <template>
+    <style>
+      :host {
+        display: block;
+        text-align: center;
+      }
+      h1 {
+        color: var(--ui-timeline-label-color, rgb(15, 3, 126));
+      }
+      h3 {
+        color: var(--ui-timeline-header-color, rgb(27, 26, 26));
+      }
+      p {
+        color: var(--ui-timeline-text-color, rgb(27, 26, 26));
+      }
+      .timeline {
+        width: 100%;
+        display: flex;
+      }
+      .timeline > :nth-child(1) {
+        width: 100%;
+
+        max-width: 47%;
+        text-align: right;
+      }
+
+      .timeline > :nth-child(2) {
+        width: 100%;
+        max-width: 6%;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+      }
+
+      .timeline > :nth-child(2) > span {
+        cursor: auto;
+        color: #6699FF;
+        text-rendering: optimizeLegibility;
+
+        flex-grow: 1;
+        width: 1px;
+        margin: 0 auto;
+        background-color: #e7e7e8;
+      }
+
+      .timeline > :nth-child(2) > div {
+        will-change: transform, opacity;
+
+        width: 10px;
+        height: 10px;
+
+        border-radius: 100px;
+        margin: auto;
+        position: absolute;
+        top: calc(10px * 2);
+        right: 0;
+        left: 0;
+
+        opacity: 1;
+        transition: opacity 2s cubic-bezier(0.215, 0.61, 0.355, 1) 0.3s;
+      }
+
+      .timeline > :nth-child(3) {
+        max-width: 47%;
+        margin-bottom: 10px;
+        text-align: left;
+      }
+
+      .orange-bg {
+        background-color: rgb(116, 236, 35);
+      }
+
+      .dark-bg {
+        background-color: #154890;
+      }
+    </style>
+    <h1>[[label]]</h1>
+    <template is="dom-repeat" items="[[items]]">
+      <div class="timeline">
+        <div>
+          <template is="dom-if" if="[[_isHeader(item.left.type)]]">
+            <h3>[[item.left.content]]</h3>
+          </template>
+          <template is="dom-if" if="[[_isText(item.left.type)]]">
+            <p>[[item.left.content]]</p>
+          </template>
+        </div>
+        <div>
+          <span></span>
+          <template is="dom-if" if="[[_isDark(item.center.dotColor)]]">
+            <div class="dark-bg"></div>
+          </template>
+          <template is="dom-if" if="[[!_isDark(item.center.dotColor)]]">
+            <div class="orange-bg"></div>
+          </template>
+        </div>
+        <div>
+          <template is="dom-if" if="[[_isHeader(item.right.type)]]">
+            <h3>[[item.right.content]]</h3>
+          </template>
+          <template is="dom-if" if="[[_isText(item.right.type)]]">
+            <p>[[item.right.content]]</p>
+          </template>
+        </div>
+      </div>
+    </template>
+  </template>
+
+  <script>
+    /**
+     * `ui-timeline`
+     * Chronological list of items through timeline.
+     *
+     * @customElement
+     * @polymer
+     * @demo demo/index.html
+     */
+    class UiTimeline extends Polymer.Element {
+      static get is() { return 'ui-timeline'; }
+      static get properties() {
+        return {
+          items: {
+            type: Array,
+            value: () => [],
+          },
+          label: {
+            type: String,
+            value: 'ing-uic-timeline',
+          },
+        };
+      }
+
+      _isHeader(type) {
+        return type === 'header' ? true : false;
+      }
+
+      _isText(type) {
+        return type === 'text' ? true : false;
+      }
+
+      _isDark(dotColor) {
+        return dotColor === 'dark' ? true : false;
+      }
+    }
+
+    window.customElements.define(UiTimeline.is, UiTimeline);
+  </script>
+</dom-module>
