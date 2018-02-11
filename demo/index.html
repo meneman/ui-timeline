@@ -23,7 +23,12 @@
       <demo-snippet>
         <template>
           <ui-timeline
-            items='[{
+            id='uiTimeline'
+            label="ui-timeline">
+          </ui-timeline>
+          <script>
+            window.addEventListener('WebComponentsReady', () => {
+              document.getElementById("uiTimeline").items = [{
               "left":
                 { "type": "header", "content": "Label 1" },
               "center":
@@ -54,8 +59,9 @@
                 { "dotColor": "light" },
               "right":
                 { "type": "header", "content": "Label 4" }
-              }]'
-              label="ui-timeline"></ui-timeline>
+              }];
+            });
+          </script>
         </template>
       </demo-snippet>
     </div>
