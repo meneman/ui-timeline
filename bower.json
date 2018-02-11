@@ -5,6 +5,9 @@
   "authors": [
     "JB Llanda <jb@jbllanda.com>"
   ],
+  "demos": {
+    "Demo": "demo/index.html"
+  },
   "main": "ui-timeline.html",
   "dependencies": {
     "polymer": "Polymer/polymer#^2.0.0"
