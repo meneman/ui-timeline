@@ -15,89 +15,95 @@
 <custom-element-demo>
   <template>
     <link rel="import" href="ui-timeline.html">
-    <ui-timeline
-      id='uiTimeline'
-      label="ui-timeline">
-    </ui-timeline>
+    <dom-bind>
+      <ui-timeline
+        id='uiTimeline'
+        label="ui-timeline"
+        items="[[data]]">
+      </ui-timeline>
+    </dom-bind>
     <script>
-      window.addEventListener('WebComponentsReady', () => {
-        document.getElementById("uiTimeline").items = [{
-        "left":
-          { "type": "header", "content": "Label 1" },
-        "center":
-          { "dotColor": "dark" },
-        "right":
-          { "type": "text", "content": "I am a sample content 1." }
+      var autobind = document.querySelector('dom-bind');
+
+      autobind.data = [{
+        left:
+          { type: "header", content: "Label 1" },
+        center:
+          { dotColor: "dark" },
+        right:
+          { type: "text", content: "I am a sample content 1." }
         },
         {
-        "left":
-          { "type": "text", "content": "I am a sample content 2." },
-        "center":
-          { "dotColor": "light" },
-        "right":
-          { "type": "header", "content": "Label 2" }
+        left:
+          { type: "text", content: "I am a sample content 2." },
+        center:
+          { dotColor: "light" },
+        right:
+          { type: "header", content: "Label 2" }
         },
         {
-        "left":
-          { "type": "header", "content": "Label 3" },
-        "center":
-          { "dotColor": "dark" },
-        "right":
-          { "type": "text", "content": "I am a sample content 3." }
+        left:
+          { type: "header", content: "Label 3" },
+        center:
+          { dotColor: "dark" },
+        right:
+          { type: "text", content: "I am a sample content 3." }
         },
         {
-        "left":
-          { "type": "text", "content": "I am a sample content 4." },
-        "center":
-          { "dotColor": "light" },
-        "right":
-          { "type": "header", "content": "Label 4" }
+        left:
+          { type: "text", content: "I am a sample content 4." },
+        center:
+          { dotColor: "light" },
+        right:
+          { type: "header", content: "Label 4" }
         }];
-      });
     </script>
   </template>
 </custom-element-demo>
 ```
 -->
 ```html
-<ui-timeline
-  id='uiTimeline'
-  label="ui-timeline">
-</ui-timeline>
+<dom-bind>
+  <ui-timeline
+    id='uiTimeline'
+    label="ui-timeline"
+    items="[[data]]">
+  </ui-timeline>
+</dom-bind>
 <script>
-  window.addEventListener('WebComponentsReady', () => {
-    document.getElementById("uiTimeline").items = [{
-    "left":
-      { "type": "header", "content": "Label 1" },
-    "center":
-      { "dotColor": "dark" },
-    "right":
-      { "type": "text", "content": "I am a sample content 1." }
+  var autobind = document.querySelector('dom-bind');
+
+  autobind.data = [{
+    left:
+      { type: "header", content: "Label 1" },
+    center:
+      { dotColor: "dark" },
+    right:
+      { type: "text", content: "I am a sample content 1." }
     },
     {
-    "left":
-      { "type": "text", "content": "I am a sample content 2." },
-    "center":
-      { "dotColor": "light" },
-    "right":
-      { "type": "header", "content": "Label 2" }
+    left:
+      { type: "text", content: "I am a sample content 2." },
+    center:
+      { dotColor: "light" },
+    right:
+      { type: "header", content: "Label 2" }
     },
     {
-    "left":
-      { "type": "header", "content": "Label 3" },
-    "center":
-      { "dotColor": "dark" },
-    "right":
-      { "type": "text", "content": "I am a sample content 3." }
+    left:
+      { type: "header", content: "Label 3" },
+    center:
+      { dotColor: "dark" },
+    right:
+      { type: "text", content: "I am a sample content 3." }
     },
     {
-    "left":
-      { "type": "text", "content": "I am a sample content 4." },
-    "center":
-      { "dotColor": "light" },
-    "right":
-      { "type": "header", "content": "Label 4" }
+    left:
+      { type: "text", content: "I am a sample content 4." },
+    center:
+      { dotColor: "light" },
+    right:
+      { type: "header", content: "Label 4" }
     }];
-  });
 </script>
 ```
