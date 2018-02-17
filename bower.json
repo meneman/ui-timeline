@@ -1,7 +1,7 @@
 {
   "name": "ui-timeline",
-  "version": "1.0.0",
-  "description": "Chronological list of items through timeline.",
+  "version": "1.0.1",
+  "description": "A new way to list items.",
   "authors": [
     "JB Llanda <jb@jbllanda.com>"
   ],
